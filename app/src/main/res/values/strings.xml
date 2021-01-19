@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">CRUD KKN</string>
+    <string name="app_fab_write">fab button for add data</string>
+    <string name="app_add_book_data">Tambah Data Mahasiswa KKN</string>
+    <string name="app_change_book_data">Ubah Data Mahasiswa KKN</string>
+    <string name="app_kkn_nim_hint">Ketik NIM</string>
+    <string name="app_kkn_student_name_hint">Ketik Nama Mahasiswa</string>
+    <string name="app_kkn_stambuk_hint">Ketik Stambuk</string>
+    <string name="app_kkn_major">Ketik Nama Jurusan</string>
+    <string name="app_kkn_faculty">Ketik Nama Fakultas</string>
+    <string name="app_kkn_university">Ketik Nama Universitas</string>
+    <string name="app_kkn_location">Ketik Lokasi KKN</string>
+    <string name="app_data_delete">Hapus</string>
+    <string name="app_data_save">Simpan</string>
+    <string name="app_data_change">Ubah</string>
+    <string name="app_empty_data">Ups, Data belum tersedia!</string>
+    <string name="app_loading_text">Mohon Tunggu&#8230;</string>
+    <string name="app_kkn_should_fill_nim">NIM harus diisi</string>
+    <string name="app_kkn_should_fill_student_name">Nama mahasiswa harus diisi</string>
+    <string name="app_kkn_should_fill_stambuk">Stambuk harus diisi</string>
+    <string name="app_kkn_should_fill_major">Jurusan harus diisi</string>
+    <string name="app_kkn_should_fill_faculty">Fakultas harus diisi</string>
+    <string name="app_kkn_should_fill_university">Universitas harus diisi</string>
+    <string name="app_kkn_should_fill_location">Lokasi KKN harus diisi</string>
+    <string name="app_splash_screen_text">kkn</string>
+    <string name="app_kkn_long_text">Kuliah Kerja Nyata</string>
+    <string name="app_kkn_data_success_add">Data berhasil ditambahkan</string>
+    <string name="app_kkn_data_success_changed">Data berhasil diubah</string>
+    <string name="app_kkn_data_success_deleted">Data berhasil dihapus</string>
+</resources>
