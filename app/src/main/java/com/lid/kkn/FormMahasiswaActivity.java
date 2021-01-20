@@ -22,6 +22,7 @@ import com.lid.kkn.field.MahasiswaField;
 
 public class FormMahasiswaActivity extends AppCompatActivity {
 
+    final Handler handler = new Handler(Looper.getMainLooper());
     public enum Mode {
         ADD, UPDATE
     }
@@ -32,11 +33,10 @@ public class FormMahasiswaActivity extends AppCompatActivity {
     TextInputLayout inputLayoutMahasiswaNim, inputLayoutMahasiswaName, inputLayoutMahasiswaStambuk,
             inputLayoutMahasiswaMajor, inputLayoutMahasiswaFaculty,
             inputLayoutMahasiswaUniversity, inputLayoutMahasiswaLocationKkn;
-    AppCompatEditText edBookTitle, edBookPublished, edBookCreator, edBookCategory,
-            edBookYearPublished, edBookThickness, edBookIsbn;
+    AppCompatEditText edMahasiswaNim, edMahasiswaName, edMahasiswaStambuk, edMahasiswaMajor,
+            edMahasiswaFaculty, edMahasiswaUniversity, edMahasiswaLocation;
     DatabaseReference databaseReference;
     MahasiswaField mahasiswaField;
-    final Handler handler = new Handler(Looper.getMainLooper());
     Mode editMode = Mode.ADD;
 
     @Override
@@ -61,19 +61,19 @@ public class FormMahasiswaActivity extends AppCompatActivity {
             if (extras != null) {
                 editMode = Mode.UPDATE;
                 mahasiswaField = (MahasiswaField) getIntent().getSerializableExtra(AppConstant.DATA);
-                edBookTitle.setText(mahasiswaField.getNim());
-                edBookCreator.setText(mahasiswaField.getStambuk());
-                edBookPublished.setText(mahasiswaField.getStudentName());
-                edBookCategory.setText(mahasiswaField.getMajor());
-                edBookYearPublished.setText(mahasiswaField.getFaculty());
-                edBookThickness.setText(mahasiswaField.getUniversity());
-                edBookIsbn.setText(mahasiswaField.getLocation());
+                edMahasiswaNim.setText(mahasiswaField.getNim());
+                edMahasiswaStambuk.setText(mahasiswaField.getStambuk());
+                edMahasiswaName.setText(mahasiswaField.getStudentName());
+                edMahasiswaMajor.setText(mahasiswaField.getMajor());
+                edMahasiswaFaculty.setText(mahasiswaField.getFaculty());
+                edMahasiswaUniversity.setText(mahasiswaField.getUniversity());
+                edMahasiswaLocation.setText(mahasiswaField.getLocation());
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         if (editMode == Mode.ADD) {
-            tvTitle.setText(getString(R.string.app_add_book_data));
+            tvTitle.setText(getString(R.string.app_add_kkn_data));
             btnSubmit.setText(getString(R.string.app_data_save));
             LinearLayoutCompat.LayoutParams params = new LinearLayoutCompat.LayoutParams(
                     LinearLayoutCompat.LayoutParams.MATCH_PARENT,
@@ -88,28 +88,28 @@ public class FormMahasiswaActivity extends AppCompatActivity {
             btnSubmit.setLayoutParams(params);
             btnDelete.setVisibility(View.GONE);
         } else {
-            tvTitle.setText(getString(R.string.app_change_book_data));
+            tvTitle.setText(getString(R.string.app_change_kkn_data));
             btnSubmit.setText(getString(R.string.app_data_change));
             btnDelete.setVisibility(View.VISIBLE);
         }
     }
 
     private void setUpView() {
-        inputLayoutMahasiswaNim = findViewById(R.id.input_layout_book_title);
-        inputLayoutMahasiswaStambuk = findViewById(R.id.input_layout_book_creator);
-        inputLayoutMahasiswaName = findViewById(R.id.input_layout_book_published);
-        inputLayoutMahasiswaMajor = findViewById(R.id.input_layout_book_category);
-        inputLayoutMahasiswaFaculty = findViewById(R.id.input_layout_book_year_published);
-        inputLayoutMahasiswaUniversity = findViewById(R.id.input_layout_book_thickness);
-        inputLayoutMahasiswaLocationKkn = findViewById(R.id.input_layout_book_isbn);
+        inputLayoutMahasiswaNim = findViewById(R.id.input_layout_mahasiswa_nim);
+        inputLayoutMahasiswaStambuk = findViewById(R.id.input_layout_mahasiswa_stambuk);
+        inputLayoutMahasiswaName = findViewById(R.id.input_layout_mahasiswa_name);
+        inputLayoutMahasiswaMajor = findViewById(R.id.input_layout_mahasiswa_major);
+        inputLayoutMahasiswaFaculty = findViewById(R.id.input_layout_mahasiswa_faculty);
+        inputLayoutMahasiswaUniversity = findViewById(R.id.input_layout_mahasiswa_university);
+        inputLayoutMahasiswaLocationKkn = findViewById(R.id.input_layout_mahasiswa_location);
 
-        edBookTitle = findViewById(R.id.ed_book_title);
-        edBookCreator = findViewById(R.id.ed_book_creator);
-        edBookPublished = findViewById(R.id.ed_book_publsihed);
-        edBookCategory = findViewById(R.id.ed_book_category);
-        edBookYearPublished = findViewById(R.id.ed_book_year_published);
-        edBookThickness = findViewById(R.id.ed_book_thickness);
-        edBookIsbn = findViewById(R.id.ed_book_isbn);
+        edMahasiswaNim = findViewById(R.id.ed_mahasiswa_nim);
+        edMahasiswaStambuk = findViewById(R.id.ed_mahasiswa_stambuk);
+        edMahasiswaName = findViewById(R.id.ed_mahasiswa_name);
+        edMahasiswaMajor = findViewById(R.id.ed_mahasiswa_major);
+        edMahasiswaFaculty = findViewById(R.id.ed_mahasiswa_faculty);
+        edMahasiswaUniversity = findViewById(R.id.ed_mahasiswa_university);
+        edMahasiswaLocation = findViewById(R.id.ed_mahasiswa_location);
 
         btnback = findViewById(R.id.btn_back);
         btnSubmit = findViewById(R.id.btn_submit);
@@ -127,22 +127,22 @@ public class FormMahasiswaActivity extends AppCompatActivity {
             } else {
                 key = mahasiswaField.getUid();
             }
-            String bookTitle = edBookTitle.getText().toString();
-            String bookCreator = edBookCreator.getText().toString();
-            String bookPublished = edBookPublished.getText().toString();
-            String bookCategory = edBookCategory.getText().toString();
-            String bookYearPublished = edBookYearPublished.getText().toString();
-            String bookThickness = edBookThickness.getText().toString();
-            String bookIsbn = edBookIsbn.getText().toString();
+            String mahasiswaNim = edMahasiswaNim.getText().toString();
+            String mahasiswaStambuk = edMahasiswaStambuk.getText().toString();
+            String mahasiswaName = edMahasiswaName.getText().toString();
+            String mahasiswaMajor = edMahasiswaMajor.getText().toString();
+            String mahasiswaFaculty = edMahasiswaFaculty.getText().toString();
+            String mahasiswaUniversity = edMahasiswaUniversity.getText().toString();
+            String mahasiswaLocation = edMahasiswaLocation.getText().toString();
             MahasiswaField field = new MahasiswaField(
                     key,
-                    bookTitle,
-                    bookCreator,
-                    bookPublished,
-                    bookCategory,
-                    bookYearPublished,
-                    bookThickness,
-                    bookIsbn
+                    mahasiswaNim,
+                    mahasiswaStambuk,
+                    mahasiswaName,
+                    mahasiswaMajor,
+                    mahasiswaFaculty,
+                    mahasiswaUniversity,
+                    mahasiswaLocation
             );
             if (key != null) {
                 if (checkValidation()) {
@@ -173,49 +173,49 @@ public class FormMahasiswaActivity extends AppCompatActivity {
     }
 
     private Boolean checkValidation() {
-        if (edBookTitle.getText().toString().matches("")) {
+        if (edMahasiswaNim.getText().toString().matches("")) {
             inputLayoutMahasiswaNim.setError(getString(R.string.app_kkn_should_fill_nim));
             return false;
         } else {
             inputLayoutMahasiswaNim.setErrorEnabled(false);
         }
 
-        if (edBookCreator.getText().toString().matches("")) {
-            inputLayoutMahasiswaStambuk.setError(getString(R.string.app_kkn_should_fill_student_name));
-            return false;
-        } else {
-            inputLayoutMahasiswaStambuk.setErrorEnabled(false);
-        }
-
-        if (edBookPublished.getText().toString().matches("")) {
-            inputLayoutMahasiswaName.setError(getString(R.string.app_kkn_should_fill_stambuk));
+        if (edMahasiswaName.getText().toString().matches("")) {
+            inputLayoutMahasiswaName.setError(getString(R.string.app_kkn_should_fill_student_name));
             return false;
         } else {
             inputLayoutMahasiswaName.setErrorEnabled(false);
         }
 
-        if (edBookCategory.getText().toString().matches("")) {
+        if (edMahasiswaStambuk.getText().toString().matches("")) {
+            inputLayoutMahasiswaStambuk.setError(getString(R.string.app_kkn_should_fill_stambuk));
+            return false;
+        } else {
+            inputLayoutMahasiswaStambuk.setErrorEnabled(false);
+        }
+
+        if (edMahasiswaMajor.getText().toString().matches("")) {
             inputLayoutMahasiswaMajor.setError(getString(R.string.app_kkn_should_fill_major));
             return false;
         } else {
             inputLayoutMahasiswaMajor.setErrorEnabled(false);
         }
 
-        if (edBookYearPublished.getText().toString().matches("")) {
+        if (edMahasiswaFaculty.getText().toString().matches("")) {
             inputLayoutMahasiswaFaculty.setError(getString(R.string.app_kkn_should_fill_faculty));
             return false;
         } else {
-            inputLayoutMahasiswaMajor.setErrorEnabled(false);
+            inputLayoutMahasiswaFaculty.setErrorEnabled(false);
         }
 
-        if (edBookThickness.getText().toString().matches("")) {
+        if (edMahasiswaUniversity.getText().toString().matches("")) {
             inputLayoutMahasiswaUniversity.setError(getString(R.string.app_kkn_should_fill_university));
             return false;
         } else {
             inputLayoutMahasiswaUniversity.setErrorEnabled(false);
         }
 
-        if (edBookIsbn.getText().toString().matches("")) {
+        if (edMahasiswaLocation.getText().toString().matches("")) {
             inputLayoutMahasiswaLocationKkn.setError(getString(R.string.app_kkn_should_fill_location));
             return false;
         } else {

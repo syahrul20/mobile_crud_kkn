@@ -32,7 +32,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/gotham_medium"
-                android:text="@string/app_add_book_data"
+                android:text="@string/app_add_kkn_data"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -56,14 +56,14 @@
             app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_book_title"
+                android:id="@+id/input_layout_mahasiswa_nim"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorIconDrawable="@null">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/ed_book_title"
+                    android:id="@+id/ed_mahasiswa_nim"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/app_kkn_nim_hint"
@@ -74,7 +74,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_book_published"
+                android:id="@+id/input_layout_mahasiswa_name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                 app:errorIconDrawable="@null">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/ed_book_publsihed"
+                    android:id="@+id/ed_mahasiswa_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/app_kkn_student_name_hint"
@@ -92,7 +92,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_book_creator"
+                android:id="@+id/input_layout_mahasiswa_stambuk"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                 app:errorIconDrawable="@null">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/ed_book_creator"
+                    android:id="@+id/ed_mahasiswa_stambuk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/app_kkn_stambuk_hint"
@@ -110,7 +110,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_book_category"
+                android:id="@+id/input_layout_mahasiswa_major"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
                 app:errorIconDrawable="@null">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/ed_book_category"
+                    android:id="@+id/ed_mahasiswa_major"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/app_kkn_major"
@@ -128,7 +128,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_book_year_published"
+                android:id="@+id/input_layout_mahasiswa_faculty"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
                 app:errorIconDrawable="@null">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/ed_book_year_published"
+                    android:id="@+id/ed_mahasiswa_faculty"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/app_kkn_faculty"
@@ -147,7 +147,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_book_thickness"
+                android:id="@+id/input_layout_mahasiswa_university"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
                 app:errorIconDrawable="@null">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/ed_book_thickness"
+                    android:id="@+id/ed_mahasiswa_university"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/app_kkn_university"
@@ -166,7 +166,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_book_isbn"
+                android:id="@+id/input_layout_mahasiswa_location"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -174,7 +174,7 @@
                 app:errorIconDrawable="@null">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/ed_book_isbn"
+                    android:id="@+id/ed_mahasiswa_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/app_kkn_location"

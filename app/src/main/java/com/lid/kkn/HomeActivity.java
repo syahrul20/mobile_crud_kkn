@@ -36,7 +36,7 @@ public class HomeActivity extends AppCompatActivity implements MahasiswaListAdap
     AppCompatImageView btnAdd;
     DatabaseReference reference;
     ProgressBar progressLoading;
-    MahasiswaListAdapter bookListAdapter;
+    MahasiswaListAdapter mahasiswaListAdapter;
     ActivityResultLauncher<Intent> onMahasiswaResult;
     SnackBarInfo snackbar = new SnackBarInfo();
 
@@ -109,10 +109,10 @@ public class HomeActivity extends AppCompatActivity implements MahasiswaListAdap
 
 
     private void setUpRecyclerView(ArrayList<MahasiswaField> mArrayList) {
-        bookListAdapter = new MahasiswaListAdapter(this, mArrayList);
-        rvMahasiswa.setAdapter(bookListAdapter);
-        bookListAdapter.setClickListener(this);
-        if (bookListAdapter.getItemCount() == 0) {
+        mahasiswaListAdapter = new MahasiswaListAdapter(this, mArrayList);
+        rvMahasiswa.setAdapter(mahasiswaListAdapter);
+        mahasiswaListAdapter.setClickListener(this);
+        if (mahasiswaListAdapter.getItemCount() == 0) {
             containerEmpty.setVisibility(View.VISIBLE);
             rvMahasiswa.setVisibility(View.GONE);
         } else {

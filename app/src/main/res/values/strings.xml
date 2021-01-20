@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">CRUD KKN</string>
     <string name="app_fab_write">fab button for add data</string>
-    <string name="app_add_book_data">Tambah Data Mahasiswa KKN</string>
-    <string name="app_change_book_data">Ubah Data Mahasiswa KKN</string>
+    <string name="app_add_kkn_data">Tambah Data Mahasiswa KKN</string>
+    <string name="app_change_kkn_data">Ubah Data Mahasiswa KKN</string>
     <string name="app_kkn_nim_hint">Ketik NIM</string>
     <string name="app_kkn_student_name_hint">Ketik Nama Mahasiswa</string>
     <string name="app_kkn_stambuk_hint">Ketik Stambuk</string>
