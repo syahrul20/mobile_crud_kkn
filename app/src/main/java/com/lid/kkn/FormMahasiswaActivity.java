@@ -32,9 +32,9 @@ public class FormMahasiswaActivity extends AppCompatActivity {
     AppCompatTextView tvTitle;
     TextInputLayout inputLayoutMahasiswaNim, inputLayoutMahasiswaName, inputLayoutMahasiswaStambuk,
             inputLayoutMahasiswaMajor, inputLayoutMahasiswaFaculty,
-            inputLayoutMahasiswaUniversity, inputLayoutMahasiswaLocationKkn;
+            inputLayoutMahasiswaUniversity, inputLayoutMahasiswaLocationKkn, inputLayoutMahasiswaKknProgram;
     AppCompatEditText edMahasiswaNim, edMahasiswaName, edMahasiswaStambuk, edMahasiswaMajor,
-            edMahasiswaFaculty, edMahasiswaUniversity, edMahasiswaLocation;
+            edMahasiswaFaculty, edMahasiswaUniversity, edMahasiswaLocation, edMahasiswaKknProgram;
     DatabaseReference databaseReference;
     MahasiswaField mahasiswaField;
     Mode editMode = Mode.ADD;
@@ -68,6 +68,7 @@ public class FormMahasiswaActivity extends AppCompatActivity {
                 edMahasiswaFaculty.setText(mahasiswaField.getFaculty());
                 edMahasiswaUniversity.setText(mahasiswaField.getUniversity());
                 edMahasiswaLocation.setText(mahasiswaField.getLocation());
+                edMahasiswaKknProgram.setText(mahasiswaField.getProgramKkn());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -102,6 +103,7 @@ public class FormMahasiswaActivity extends AppCompatActivity {
         inputLayoutMahasiswaFaculty = findViewById(R.id.input_layout_mahasiswa_faculty);
         inputLayoutMahasiswaUniversity = findViewById(R.id.input_layout_mahasiswa_university);
         inputLayoutMahasiswaLocationKkn = findViewById(R.id.input_layout_mahasiswa_location);
+        inputLayoutMahasiswaKknProgram = findViewById(R.id.input_layout_mahasiswa_program);
 
         edMahasiswaNim = findViewById(R.id.ed_mahasiswa_nim);
         edMahasiswaStambuk = findViewById(R.id.ed_mahasiswa_stambuk);
@@ -110,6 +112,7 @@ public class FormMahasiswaActivity extends AppCompatActivity {
         edMahasiswaFaculty = findViewById(R.id.ed_mahasiswa_faculty);
         edMahasiswaUniversity = findViewById(R.id.ed_mahasiswa_university);
         edMahasiswaLocation = findViewById(R.id.ed_mahasiswa_location);
+        edMahasiswaKknProgram = findViewById(R.id.ed_mahasiswa_program);
 
         btnback = findViewById(R.id.btn_back);
         btnSubmit = findViewById(R.id.btn_submit);
@@ -134,6 +137,7 @@ public class FormMahasiswaActivity extends AppCompatActivity {
             String mahasiswaFaculty = edMahasiswaFaculty.getText().toString();
             String mahasiswaUniversity = edMahasiswaUniversity.getText().toString();
             String mahasiswaLocation = edMahasiswaLocation.getText().toString();
+            String mahasiswaKknProgram = edMahasiswaKknProgram.getText().toString();
             MahasiswaField field = new MahasiswaField(
                     key,
                     mahasiswaNim,
@@ -142,7 +146,8 @@ public class FormMahasiswaActivity extends AppCompatActivity {
                     mahasiswaMajor,
                     mahasiswaFaculty,
                     mahasiswaUniversity,
-                    mahasiswaLocation
+                    mahasiswaLocation,
+                    mahasiswaKknProgram
             );
             if (key != null) {
                 if (checkValidation()) {
@@ -220,6 +225,13 @@ public class FormMahasiswaActivity extends AppCompatActivity {
             return false;
         } else {
             inputLayoutMahasiswaLocationKkn.setErrorEnabled(false);
+        }
+
+        if (edMahasiswaKknProgram.getText().toString().matches("")) {
+            inputLayoutMahasiswaKknProgram.setError(getString(R.string.app_kkn_should_fill_kkn_program));
+            return false;
+        } else {
+            inputLayoutMahasiswaKknProgram.setErrorEnabled(false);
         }
 
         return true;

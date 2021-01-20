@@ -10,6 +10,7 @@
     <string name="app_kkn_faculty">Ketik Nama Fakultas</string>
     <string name="app_kkn_university">Ketik Nama Universitas</string>
     <string name="app_kkn_location">Ketik Lokasi KKN</string>
+    <string name="app_kkn_program">Ketik Nama Program KKN</string>
     <string name="app_data_delete">Hapus</string>
     <string name="app_data_save">Simpan</string>
     <string name="app_data_change">Ubah</string>
@@ -22,6 +23,7 @@
     <string name="app_kkn_should_fill_faculty">Fakultas harus diisi</string>
     <string name="app_kkn_should_fill_university">Universitas harus diisi</string>
     <string name="app_kkn_should_fill_location">Lokasi KKN harus diisi</string>
+    <string name="app_kkn_should_fill_kkn_program">Nama program KKN harus diisi</string>
     <string name="app_splash_screen_text">kkn</string>
     <string name="app_kkn_long_text">Kuliah Kerja Nyata</string>
     <string name="app_kkn_data_success_add">Data berhasil ditambahkan</string>

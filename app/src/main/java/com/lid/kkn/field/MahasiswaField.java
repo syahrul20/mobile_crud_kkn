@@ -17,6 +17,7 @@ public class MahasiswaField implements Serializable {
     private String faculty;
     private String university;
     private String location;
+    private String programKkn;
 
     public MahasiswaField() {
     }
@@ -29,7 +30,8 @@ public class MahasiswaField implements Serializable {
             String major,
             String faculty,
             String university,
-            String location
+            String location,
+            String programKkn
     ) {
         this.uid = uid;
         this.nim = nim;
@@ -39,6 +41,7 @@ public class MahasiswaField implements Serializable {
         this.faculty = faculty;
         this.university = university;
         this.location = location;
+        this.programKkn = programKkn;
     }
 
     public void setUid(String uid) {
@@ -103,5 +106,13 @@ public class MahasiswaField implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getProgramKkn() {
+        return programKkn;
+    }
+
+    public void setProgramKkn(String programKkn) {
+        this.programKkn = programKkn;
     }
 }

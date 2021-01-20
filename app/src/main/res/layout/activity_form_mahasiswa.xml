@@ -183,6 +183,24 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_mahasiswa_program"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:errorIconDrawable="@null">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ed_mahasiswa_program"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/app_kkn_program"
+                    android:inputType="textCapWords"
+                    android:textColorHint="@color/colorGreyLight" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_delete"
                 android:layout_width="match_parent"
